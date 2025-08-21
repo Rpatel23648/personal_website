@@ -149,43 +149,31 @@ function App() {
                 </div>
               </div>
             </div>
-
-            {/* <div className="quick-stats">
-              <div className="stat-card">
-                <div className="stat-number">5+</div>
-                <div className="stat-label">Hardware Projects</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-number">5+</div>
-                <div className="stat-label">Programming Languages</div>
-              </div>
-            </div> */}
-
             <div className="contact-section">
               <h2>Contact Me</h2>
-              <div className="contact-card">
-                <div className="contact-info">
-                  <div className="contact-item">
-                    <span className="contact-icon">📧</span>
-                    <div>
-                      <strong>Email</strong>
-                      <p>romil.patel@gatech.edu</p>
-                    </div>
-                  </div>
-                  <div className="contact-item">
-                    <span className="contact-icon">📱</span>
-                    <div>
-                      <strong>Phone</strong>
-                      <p>+1 (845) 821-0981</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="contact-actions">
-                  <a href="mailto:romil.patel@gatech.edu" className="contact-button">
-                    📧 Send Email
+              <div className="contact-bubbles">
+                <div className="contact-bubble">
+                  <div className="contact-bubble-icon">📧</div>
+                  <h3>Email</h3>
+                  <p>romil.patel@gatech.edu</p>
+                  <a href="mailto:romil.patel@gatech.edu" className="contact-bubble-link">
+                    Send Email →
                   </a>
-                  <a href="tel:+15551234567" className="contact-button">
-                    📱 Call Now
+                </div>
+                <div className="contact-bubble">
+                  <div className="contact-bubble-icon">📱</div>
+                  <h3>Phone</h3>
+                  <p>+1 (845) 821-0981</p>
+                  <a href="tel:+18458210981" className="contact-bubble-link">
+                    Call Now →
+                  </a>
+                </div>
+                <div className="contact-bubble">
+                  <div className="contact-bubble-icon">💼</div>
+                  <h3>LinkedIn</h3>
+                  <p>Connect with me professionally</p>
+                  <a href="https://www.linkedin.com/in/patel-romil-engineer" target="_blank" rel="noopener noreferrer" className="contact-bubble-link">
+                    Connect →
                   </a>
                 </div>
               </div>
@@ -481,50 +469,83 @@ function App() {
                   <a href="/Screenshot 2025-08-21 105825.png" className="project-link" target="_blank" rel="noopener noreferrer">
                     🔧 Overview of Processor
                   </a>
-                  <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/Rpatel23648/ECE-3058/tree/main/Lab%202%20-%20Pipelining" className="project-link" target="_blank" rel="noopener noreferrer">
                     📁 GitHub
                   </a>
                 </div>
               </div>
               <div className="project-card">
                 <div className="project-header">
-                  <h3>📱 Edge AI Object Detection</h3>
-                  <span className="project-status">In Progress</span>
-                </div>
-                <p>Real-time object detection system optimized for edge devices. Uses quantized neural networks and hardware acceleration for low-power operation.</p>
-                <div className="project-tech">
-                  <span className="tech-badge">PyTorch</span>
-                  <span className="tech-badge">OpenCV</span>
-                  <span className="tech-badge">C++</span>
-                  <span className="tech-badge">CUDA</span>
-                </div>
-                <div className="project-links">
-                  <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
-                    👁️ Demo
-                  </a>
-                  <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
-                    📁 GitHub
-                  </a>
-                </div>
-              </div>
-              <div className="project-card">
-                <div className="project-header">
-                  <h3>🔌 Digital Signal Processor</h3>
+                  <h3>📱 Cache Simulation</h3>
                   <span className="project-status">Complete</span>
                 </div>
-                <p>Custom DSP with optimized arithmetic units for audio processing. Features FFT acceleration and real-time filtering capabilities.</p>
+                <p>Simulated Cache using C to mimic the behaviour of a cache memory of different sizes, different associativity, using a least recently used replacement policy</p>
                 <div className="project-tech">
-                  <span className="tech-badge">VHDL</span>
-                  <span className="tech-badge">MATLAB</span>
-                  <span className="tech-badge">FPGA</span>
-                  <span className="tech-badge">DSP</span>
+                  <span className="tech-badge">C</span>
+                  <span className="tech-badge">Caching</span>
+                  <span className="tech-badge">Makefiles</span>
+                  <span className="tech-badge">Command Line Interface</span>
                 </div>
                 <div className="project-links">
-                  <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
-                    🎵 Audio Demo
-                  </a>
-                  <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
+                  {/* <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
+                    👁️ Demo
+                  </a> */}
+                  <a href="https://github.com/Rpatel23648/ECE-3058/tree/main/Lab%203%20-%20Caches" className="project-link" target="_blank" rel="noopener noreferrer">
                     📁 GitHub
+                  </a>
+                </div>
+              </div>
+              <div className="project-card">
+                <div className="project-header">
+                  <h3>🔌 Virtual Memory Simulator</h3>
+                  <span className="project-status">Complete</span>
+                </div>
+                <p> Simulated a virtual memory system using C to mimic the behaviour of a virtual memory system of different page sizes, different page tables, and replacing pages with a write-back policy.</p>
+                <div className="project-tech">
+                  <span className="tech-badge">C</span>
+                  <span className="tech-badge">Makefiles</span>
+                  <span className="tech-badge">Virtual Memory</span>
+                  <span className="tech-badge">Command Line Interface</span>
+                </div>
+                <div className="project-links">
+                  <a href="https://github.com/Rpatel23648/ECE-3058/tree/main/Lab%204%20-%20Virtual%20Memory" className="project-link" target="_blank" rel="noopener noreferrer">
+                    📁 GitHub
+                  </a>
+                </div>
+              </div>
+              <div className="project-card">
+                <div className="project-header">
+                  <h3>💻 Multithreading with different Algorithms</h3>
+                  <span className="project-status">Complete</span>
+                </div>
+                <p>Implemented multithreading to implement different algorithms for CPU task scheduling such as First In, First Out (FIFO) and Round Robin (RR).</p>
+                <div className="project-tech">
+                  <span className="tech-badge">C</span>
+                  <span className="tech-badge">Makefiles</span>
+                  <span className="tech-badge">Multithreading</span>
+                  <span className="tech-badge">Command Line Interface</span>
+                </div>
+                <div className="project-links">
+                  <a href="https://github.com/Rpatel23648/ECE-3058/tree/main/Lab%205%20-%20Multithreading/assignment" className="project-link" target="_blank" rel="noopener noreferrer">
+                    📁 GitHub
+                  </a>
+                </div>
+              </div>
+              <div className="project-card">
+                <div className="project-header">
+                  <h3>🍔 Quick and Quality Website & Order Placing and Management System</h3>
+                  <span className="project-status">Live</span>
+                </div>
+                <p>Developed a website and order placing and management system for a local deli using React, MongoDB, and Node.js. The website allows customers to view the menu, place orders, and allows the deli to update customers regarding their order and its status. The admin site allows for the deli to view orders, update them as recieved to send a text notification to the customer and update them when their order is complete. The owner site allows for the owner to view daily profits, top 10 sold items sold for the day and view previous days orders and profits, and enables owner to change prices that update on the customer side rapidly.</p>
+                <div className="project-tech">
+                  <span className="tech-badge">React</span>
+                  <span className="tech-badge">MongoDB</span>
+                  <span className="tech-badge">Node.js</span>
+                  <span className="tech-badge">DevOps</span>
+                </div>
+                <div className="project-links">
+                  <a href="https://quickandquality.net" className="project-link" target="_blank" rel="noopener noreferrer">
+                    📁 Website Link
                   </a>
                 </div>
               </div>
@@ -533,18 +554,18 @@ function App() {
                   <h3>🌐 Web Development Portfolio</h3>
                   <span className="project-status">Live</span>
                 </div>
-                <p>Full-stack web application showcasing technical projects and skills. Built with modern web technologies and responsive design.</p>
+                <p>Frontend web application showcasing technical projects and skills. Built with modern web technologies and responsive design.</p>
                 <div className="project-tech">
                   <span className="tech-badge">React</span>
-                  <span className="tech-badge">Node.js</span>
-                  <span className="tech-badge">MongoDB</span>
-                  <span className="tech-badge">CSS3</span>
+                  <span className="tech-badge">CSS</span>
+                  <span className="tech-badge">HTML</span>
+                  <span className="tech-badge">Javascript</span>
                 </div>
                 <div className="project-links">
-                  <a href="https://quickandquality.net" className="project-link" target="_blank" rel="noopener noreferrer">
-                    🌐 Live Demo
+                  <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
+                    🌐 Live Demo (p.s This is the site!)
                   </a>
-                  <a href="#" className="project-link">
+                  <a href="https://github.com/Rpatel23648/personal_website/tree/main/personal_website" className="project-link">
                     📁 GitHub
                   </a>
                 </div>
