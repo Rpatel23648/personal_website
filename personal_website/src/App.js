@@ -56,9 +56,17 @@ function App() {
                 {typedText}
                 <span className={`cursor ${showCursor ? 'visible' : ''}`}>|</span>
               </h1>
+              <div className="profile-image-container">
+                <img
+                  src="/IMG_9411.JPEG"
+                  alt="Romil Patel"
+                  className="profile-image"
+                />
+              </div>
             </div>
-            <p className="intro-text">Computer Engineering student passionate about Software/Hardware integration, Digital Design, and AI. Strong foundation in programming, embedded systems, and digital logic. Seeking a Summer 2026 internship in Software Engineering, Hardware Engineering, Chip Design or AI to leverage technical and analytical skills on real-world systems.</p>
-            
+
+            <p className="intro-text">Welcome to my portfolio, where innovation meets expertise. As a Computer Engineering student at Georgia Tech, I brings a unique blend of skills in Digital Design, Hardware/Software Programming, and Artificial Intelligence. With a proven track record of enhancing operational efficiency and developing cutting-edge projects, I am eager to contribute to impactful software or hardware engineering initiatives. Explore my journey through technology and problem-solving here!.</p>
+
             <div className="hero-section">
               <h2>🔬 What I Do</h2>
               <p>Bridging hardware and software to create intelligent systems</p>
@@ -68,22 +76,102 @@ function App() {
                 <span className="tech-item">⚡ Digital Design</span>
                 <span className="tech-item">💻 Full-Stack Development</span>
                 <span className="tech-item">🔌 FPGA Programming</span>
-                <span className="tech-item">📱 IoT Development</span>
               </div>
             </div>
 
-            <div className="quick-stats">
-              <div className="stat-card">
-                <div className="stat-number">15+</div>
-                <div className="stat-label">Hardware Projects</div>
+            <div className="goals-section">
+              <h2>🎯 My Goals</h2>
+              <div className="goals-container">
+                <div className="goal-category">
+                  <h3>🚀 Long-Term Goals</h3>
+                  <div className="goal-item long-term">
+                    <span className="goal-icon">🔧</span>
+                    <div className="goal-content">
+                      <strong>Career Aspiration</strong>
+                      <p>Join an organization that is driving mass innovation in the chip design world that will let me integrate AI/ML into the hardware world.</p>
+                    </div>
+                  </div>
+                  <div className="goal-item long-term">
+                    <span className="goal-icon">🏢</span>
+                    <div className="goal-content">
+                      <strong>Industry Impact</strong>
+                      <p>Contribute to next-generation computing architectures that push the boundaries of what's possible in semiconductor technology.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="goal-category">
+                  <h3>📚 Short-Term Goals</h3>
+                  <div className="goal-item short-term">
+                    <span className="goal-icon">🤖</span>
+                    <div className="goal-content">
+                      <strong>AI/ML Research</strong>
+                      <p>Develop expertise in neural network acceleration and hardware-software co-design for AI applications throughout my time at Georgia Tech's OLIVES Lab.</p>
+                    </div>
+                  </div>
+                  <div className="goal-item short-term">
+                    <span className="goal-icon">⚡</span>
+                    <div className="goal-content">
+                      <strong>Digital Design</strong>
+                      <p>Master VLSI design, processor architecture, and memory systems through coursework, projects, internships and clubs available at Georgia Tech.</p>
+                    </div>
+                  </div>
+                  <div className="goal-item short-term">
+                    <span className="goal-icon">💻</span>
+                    <div className="goal-content">
+                      <strong>Full-Stack Development</strong>
+                      <p>Build practical software development skills to complement hardware engineering expertise to give myself more job opportunities and expertise in today's market.</p>
+                    </div>
+                  </div>
+                  <div className="goal-item short-term">
+                    <span className="goal-icon">🔌</span>
+                    <div className="goal-content">
+                      <strong>FPGA Programming</strong>
+                      <p>Gain hands-on experience with FPGA-based system design and optimization through projects, internships and clubs available at Georgia Tech.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            {/* <div className="quick-stats">
               <div className="stat-card">
-                <div className="stat-number">8+</div>
-                <div className="stat-label">AI/ML Models</div>
+                <div className="stat-number">5+</div>
+                <div className="stat-label">Hardware Projects</div>
               </div>
               <div className="stat-card">
                 <div className="stat-number">5+</div>
                 <div className="stat-label">Programming Languages</div>
+              </div>
+            </div> */}
+
+            <div className="contact-section">
+              <h2>Contact Me</h2>
+              <div className="contact-card">
+                <div className="contact-info">
+                  <div className="contact-item">
+                    <span className="contact-icon">📧</span>
+                    <div>
+                      <strong>Email</strong>
+                      <p>romil.patel@gatech.edu</p>
+                    </div>
+                  </div>
+                  <div className="contact-item">
+                    <span className="contact-icon">📱</span>
+                    <div>
+                      <strong>Phone</strong>
+                      <p>+1 (845) 821-0981</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="contact-actions">
+                  <a href="mailto:romil.patel@gatech.edu" className="contact-button">
+                    📧 Send Email
+                  </a>
+                  <a href="tel:+15551234567" className="contact-button">
+                    📱 Call Now
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -107,7 +195,7 @@ function App() {
                   <p>Interested in semiconductor industry, autonomous systems, and developing next-generation computing architectures that push the boundaries of what's possible.</p>
                 </div>
               </div>
-              
+
               <h3>🎯 Technical Interests</h3>
               <div className="interests-grid">
                 <div className="interest-item">
@@ -199,19 +287,19 @@ function App() {
                   <span className="tech-badge">Linux</span>
                 </div>
               </div>
-              
+
               <h3>🎓 Education</h3>
               <div className="education-item">
-                <h4>Bachelor of Science in Computer Engineering</h4>
+                <h5>Bachelor of Science in Computer Engineering & Minor in Applications of Artificial Intelligence and Machine Learning</h5>
                 <p>Georgia Institute of Technology • 2024 - Present</p>
-                <p>GPA: 3.8/4.0 | Focus: Embedded Systems & AI/ML</p>
+                <p>GPA: 3.2/4.0 | Focus: System Architecture & Computing Hardware & Emerging Architectures </p>
               </div>
               <div className="education-item">
                 <h4>Bachelor of Science in Computer Engineering</h4>
                 <p>Stony Brook University • 2023 - 2024</p>
                 <p>GPA: 3.9/4.0 | Dean's List</p>
               </div>
-              
+
               <h3>🛠️ Technical Skills</h3>
               <div className="skills-container">
                 {skills.map((skill, index) => (
@@ -221,9 +309,9 @@ function App() {
                       <span className="skill-percentage">{skill.level}%</span>
                     </div>
                     <div className="skill-bar">
-                      <div 
-                        className="skill-progress" 
-                        style={{ 
+                      <div
+                        className="skill-progress"
+                        style={{
                           width: `${skill.level}%`,
                           backgroundColor: skill.color
                         }}
@@ -233,23 +321,23 @@ function App() {
                 ))}
               </div>
 
-              <h3>🏆 Certifications & Achievements</h3>
+
               <div className="achievements-grid">
-                <div className="achievement-item">
-                  <span className="achievement-icon">🏅</span>
-                  <span>Xilinx FPGA Design Certification</span>
+                <div className="">
+                  {/* <span className="achievement-icon">🏅</span>
+                  <span>Xilinx FPGA Design Certification</span> */}
                 </div>
-                <div className="achievement-item">
-                  <span className="achievement-icon">🏆</span>
-                  <span>Dean's List - 3 Semesters</span>
+                <div className="">
+                  {/* <span className="achievement-icon">🏆</span>
+                  <span>Dean's List - 3 Semesters</span> */}
                 </div>
-                <div className="achievement-item">
-                  <span className="achievement-icon">🎯</span>
-                  <span>IEEE Student Member</span>
+                <div className="">
+                  {/* <span className="achievement-icon">🎯</span>
+                  <span>IEEE Student Member</span> */}
                 </div>
-                <div className="achievement-item">
-                  <span className="achievement-icon">💡</span>
-                  <span>Hackathon Winner - IoT Category</span>
+                <div className="">
+                  {/* <span className="achievement-icon">💡</span>
+                  <span>Hackathon Winner - IoT Category</span> */}
                 </div>
               </div>
             </div>
@@ -409,25 +497,25 @@ function App() {
 
       {/* Navigation Tabs */}
       <nav className="nav-tabs">
-        <button 
+        <button
           className={`tab ${activeTab === 'home' ? 'active' : ''}`}
           onClick={() => handleTabClick('home')}
         >
           🏠 Home
         </button>
-        <button 
+        <button
           className={`tab ${activeTab === 'about' ? 'active' : ''}`}
           onClick={() => handleTabClick('about')}
         >
           👤 About Me
         </button>
-        <button 
+        <button
           className={`tab ${activeTab === 'resume' ? 'active' : ''}`}
           onClick={() => handleTabClick('resume')}
         >
           📄 Resume
         </button>
-        <button 
+        <button
           className={`tab ${activeTab === 'projects' ? 'active' : ''}`}
           onClick={() => handleTabClick('projects')}
         >
