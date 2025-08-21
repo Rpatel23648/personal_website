@@ -6,6 +6,11 @@ function App() {
   const [typedText, setTypedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
+  const [expandedSections, setExpandedSections] = useState({
+    experience: false,
+    education: false,
+    skills: false
+  });
 
   const fullText = "Hello, I'm Romil Patel! 👋";
 
@@ -32,18 +37,28 @@ function App() {
     setActiveTab(tabName);
   };
 
+  const toggleSection = (sectionName) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [sectionName]: !prev[sectionName]
+    }));
+  };
+
   // Computer Engineering focused skills
   const skills = [
     { name: 'Python', level: 90, color: '#3776ab' },
     { name: 'C/C++', level: 85, color: '#00599c' },
     { name: 'Verilog/VHDL', level: 75, color: '#ff6b35' },
-    { name: 'JavaScript', level: 80, color: '#f7df1e' },
+    { name: 'JavaScript', level: 65, color: '#f7df1e' },
     { name: 'React', level: 75, color: '#61dafb' },
-    { name: 'TensorFlow/PyTorch', level: 70, color: '#ff6f00' },
+    { name: 'TensorFlow/PyTorch', level: 50, color: '#ff6f00' },
     { name: 'FPGA Design', level: 65, color: '#ff6600' },
     { name: 'Git/Linux', level: 85, color: '#f05032' },
+    { name: 'Java', level: 70, color: '#0076a8' },
+    { name: 'RISC-V Assembly', level: 80, color: '#0076a8' },
+    { name: 'C#', level: 60, color: '#0076a8' },
     { name: 'Arduino/Raspberry Pi', level: 80, color: '#00979d' },
-    { name: 'MATLAB', level: 75, color: '#0076a8' }
+    { name: 'MATLAB', level: 40, color: '#0076a8' }
   ];
 
   const renderContent = () => {
@@ -74,7 +89,7 @@ function App() {
                 <span className="tech-item">🔧 Embedded Systems</span>
                 <span className="tech-item">🤖 AI/ML Research</span>
                 <span className="tech-item">⚡ Digital Design</span>
-                <span className="tech-item">💻 Full-Stack Development</span>
+                <span className="tech-item">💻 Software Development</span>
                 <span className="tech-item">🔌 FPGA Programming</span>
               </div>
             </div>
@@ -88,7 +103,7 @@ function App() {
                     <span className="goal-icon">🔧</span>
                     <div className="goal-content">
                       <strong>Career Aspiration</strong>
-                      <p>Join an organization that is driving mass innovation in the chip design world that will let me integrate AI/ML into the hardware world.</p>
+                      <p>Join an organization that is driving mass innovation in the chip design world that will let me integrate AI/ML into the hardware world or to work on software engineering projects that will help me gain more experience in the software world to make a significant impact.</p>
                     </div>
                   </div>
                   <div className="goal-item long-term">
@@ -98,6 +113,7 @@ function App() {
                       <p>Contribute to next-generation computing architectures that push the boundaries of what's possible in semiconductor technology.</p>
                     </div>
                   </div>
+
                 </div>
 
                 <div className="goal-category">
@@ -119,7 +135,7 @@ function App() {
                   <div className="goal-item short-term">
                     <span className="goal-icon">💻</span>
                     <div className="goal-content">
-                      <strong>Full-Stack Development</strong>
+                      <strong>Software Development</strong>
                       <p>Build practical software development skills to complement hardware engineering expertise to give myself more job opportunities and expertise in today's market.</p>
                     </div>
                   </div>
@@ -184,15 +200,15 @@ function App() {
               <div className="about-grid">
                 <div className="about-card">
                   <h3>🎓 Academic Journey</h3>
-                  <p>Computer Engineering student at Georgia Tech, building on my foundation from Stony Brook University. Focused on embedded systems, digital design, and AI/ML applications.</p>
+                  <p>Computer Engineering student at Georgia Tech, building on my foundation from Stony Brook University. Focused on embedded systems, digital design, AI/ML applications, and software development.</p>
                 </div>
                 <div className="about-card">
                   <h3>🔬 Research Interests</h3>
-                  <p>Passionate about edge computing, neural network acceleration, and developing efficient hardware-software co-design solutions for AI applications.</p>
+                  <p>Passionate about edge computing, neural networks, and developing efficient hardware-software co-design applications.</p>
                 </div>
                 <div className="about-card">
                   <h3>🌍 Industry Focus</h3>
-                  <p>Interested in semiconductor industry, autonomous systems, and developing next-generation computing architectures that push the boundaries of what's possible.</p>
+                  <p>Interested in semiconductor industry, autonomous systems, software development, and developing next-generation computing architectures that push the boundaries of what's possible.</p>
                 </div>
               </div>
 
@@ -212,15 +228,15 @@ function App() {
                 </div>
                 <div className="interest-item">
                   <span className="interest-icon">🔌</span>
-                  <span>FPGA Development</span>
+                  <span>FPGA Development & Programming</span>
                 </div>
                 <div className="interest-item">
                   <span className="interest-icon">📱</span>
-                  <span>IoT & Edge Computing</span>
+                  <span>Software Development</span>
                 </div>
                 <div className="interest-item">
                   <span className="interest-icon">💻</span>
-                  <span>System Architecture</span>
+                  <span>System Architecture & Memory Systems</span>
                 </div>
               </div>
 
@@ -229,29 +245,29 @@ function App() {
                 <div className="course-item">
                   <span className="course-icon">🔌</span>
                   <div>
-                    <strong>Digital Design & Computer Architecture</strong>
-                    <p>VLSI design, processor architecture, memory systems</p>
+                    <strong>Architecture, Memory Systems, Concurrency, and Energy in Computation (ECE 3058)</strong>
+                    <p>Computer architecture and operating systems fundamentals, focusing on performance analysis, pipelining, memory systems, I/O, scheduling, and parallelism.</p>
                   </div>
                 </div>
                 <div className="course-item">
                   <span className="course-icon">🤖</span>
                   <div>
-                    <strong>Artificial Intelligence & Machine Learning</strong>
-                    <p>Neural networks, computer vision, natural language processing</p>
+                    <strong>AI Foundations (ECE 2806)</strong>
+                    <p>An introduction to the foundations of AI, combining programming, math, data literacy, problem-solving, model evaluation, ethical considerations, and practical tools.</p>
                   </div>
                 </div>
                 <div className="course-item">
                   <span className="course-icon">🔧</span>
                   <div>
-                    <strong>Embedded Systems Design</strong>
-                    <p>Real-time systems, microcontroller programming, sensor integration</p>
+                    <strong>GPU Programming - General Programming (ECE 3803)</strong>
+                    <p>Development, analysis, and optimization of general programs that take advantage of the computational capabilities of modern GPU hardware.</p>
                   </div>
                 </div>
                 <div className="course-item">
                   <span className="course-icon">⚡</span>
                   <div>
-                    <strong>Computer Networks & Communication</strong>
-                    <p>Protocol design, wireless communication, network security</p>
+                    <strong>Programming SW/HW Systems (ECE 2035)</strong>
+                    <p>Implement high-level programming language storage, control, and procedural constructs in the assembly language of a hardware platform</p>
                   </div>
                 </div>
               </div>
@@ -262,82 +278,138 @@ function App() {
         return (
           <div className="content">
             <h1>Resume 📄</h1>
-            <div className="resume-section">
-              <h3>💼 Experience</h3>
-              <div className="experience-item">
-                <h4>Hardware Engineering Intern</h4>
-                <p className="company-info">Tech Company • Summer 2024</p>
-                <p>Developed FPGA-based neural network accelerators for edge computing applications. Implemented custom RTL designs and optimized for power efficiency.</p>
-                <div className="tech-used">
-                  <span className="tech-badge">Verilog</span>
-                  <span className="tech-badge">FPGA</span>
-                  <span className="tech-badge">Python</span>
-                  <span className="tech-badge">TensorFlow</span>
+
+            {/* PDF Viewer Section */}
+            <div className="resume-pdf-section">
+              <div className="pdf-header">
+                <h3>📋 Full Resume</h3>
+                <div className="pdf-actions">
+                  <a
+                    href="/Patel_Romil Resume.pdf"
+                    download="Patel_Romil_Resume.pdf"
+                    className="download-button"
+                  >
+                    📥 Download PDF
+                  </a>
+                  <a
+                    href="/Patel_Romil Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="view-button"
+                  >
+                    🔍 View Full Page
+                  </a>
                 </div>
               </div>
 
-              <div className="experience-item">
-                <h4>Research Assistant - AI Lab</h4>
-                <p className="company-info">University Research Lab • 2023 - Present</p>
-                <p>Working on hardware-software co-design for AI acceleration. Developing custom architectures for neural network inference on embedded devices.</p>
-                <div className="tech-used">
-                  <span className="tech-badge">C/C++</span>
-                  <span className="tech-badge">PyTorch</span>
-                  <span className="tech-badge">ARM Assembly</span>
-                  <span className="tech-badge">Linux</span>
-                </div>
+              <div className="pdf-viewer">
+                <iframe
+                  src="/Patel_Romil Resume.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                  title="Romil Patel Resume"
+                  width="100%"
+                  height="600"
+                  style={{ border: 'none', borderRadius: '10px' }}
+                />
               </div>
+            </div>
 
-              <h3>🎓 Education</h3>
-              <div className="education-item">
-                <h5>Bachelor of Science in Computer Engineering & Minor in Applications of Artificial Intelligence and Machine Learning</h5>
-                <p>Georgia Institute of Technology • 2024 - Present</p>
-                <p>GPA: 3.2/4.0 | Focus: System Architecture & Computing Hardware & Emerging Architectures </p>
-              </div>
-              <div className="education-item">
-                <h4>Bachelor of Science in Computer Engineering</h4>
-                <p>Stony Brook University • 2023 - 2024</p>
-                <p>GPA: 3.9/4.0 | Dean's List</p>
-              </div>
+            {/* Collapsible Resume Sections */}
+            <div className="resume-sections">
+              <h3>📖 Resume Highlights</h3>
 
-              <h3>🛠️ Technical Skills</h3>
-              <div className="skills-container">
-                {skills.map((skill, index) => (
-                  <div key={index} className="skill-item">
-                    <div className="skill-header">
-                      <span className="skill-name">{skill.name}</span>
-                      <span className="skill-percentage">{skill.level}%</span>
-                    </div>
-                    <div className="skill-bar">
-                      <div
-                        className="skill-progress"
-                        style={{
-                          width: `${skill.level}%`,
-                          backgroundColor: skill.color
-                        }}
-                      ></div>
+              {/* Experience Section */}
+              <div className="resume-collapsible">
+                <button
+                  className="collapsible-header"
+                  onClick={() => toggleSection('experience')}
+                >
+                  <span>💼 Experience</span>
+                  <span className="toggle-icon">{expandedSections.experience ? '−' : '+'}</span>
+                </button>
+                <div className={`collapsible-content ${expandedSections.experience ? 'expanded' : ''}`}>
+                  <div className="experience-item">
+                    <h4>TSO Technical Assistant</h4>
+                    <p className="company-info">Georgia Institute of Technology • August 2024 - Present</p>
+                    <p>Provided technical support to faculty and students, resolving 20-30 support tickets per week and maintaining a high satisfaction
+                      rate.</p>
+                    <p>Managed a database of over 4,000 devices, ensuring compliance with security protocols and task sequence accuracy for
+                      software deployment</p>
+                    <div className="tech-used">
+                      <span className="tech-badge">Customer Support & Problem Solving</span>
+                      <span className="tech-badge">Hardware & Software Troubleshooting</span>
+                      <span className="tech-badge">Operating Systems (MacOS / Windows / Linux (Ubuntu & Redhat))</span>
+                      <span className="tech-badge">Database Management</span>
                     </div>
                   </div>
-                ))}
+
+                  <div className="experience-item">
+                    <h4>Lyft Back-End Engineering Job Simulation (Virtual – Forage)</h4>
+                    <p className="company-info">Forage • May 2024 - June 2024</p>
+                    <p>Completed the Back-End Engineering job simulation, taking over development of an unfinished project for the Lyft Rentals team. </p>
+                    <p>Designed a UML class diagram to reorganize the architecture and implemented unit tests to improve code reliability.</p>
+                    <p>Refactored legacy code using test-driven development (TDD) principles and added new functionality to meet project requirements</p>
+                    <div className="tech-used">
+                      <span className="tech-badge">Python</span>
+                      <span className="tech-badge">UML</span>
+                      <span className="tech-badge">Test-Driven Development</span>
+                      <span className="tech-badge">Legacy Code Refactoring</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
+              {/* Education Section */}
+              <div className="resume-collapsible">
+                <button
+                  className="collapsible-header"
+                  onClick={() => toggleSection('education')}
+                >
+                  <span>🎓 Education</span>
+                  <span className="toggle-icon">{expandedSections.education ? '−' : '+'}</span>
+                </button>
+                <div className={`collapsible-content ${expandedSections.education ? 'expanded' : ''}`}>
+                  <div className="education-item">
+                    <h5>Bachelor of Science in Computer Engineering & Minor in Applications of Artificial Intelligence and Machine Learning</h5>
+                    <p>Georgia Institute of Technology • 2024 - Present</p>
+                    <p>GPA: 3.2/4.0 | Focus: System Architecture & Computing Hardware & Emerging Architectures </p>
+                  </div>
+                  <div className="education-item">
+                    <h4>Bachelor of Science in Computer Engineering</h4>
+                    <p>Stony Brook University • 2023 - 2024</p>
+                    <p>GPA: 3.9/4.0 | Dean's List</p>
+                  </div>
+                </div>
+              </div>
 
-              <div className="achievements-grid">
-                <div className="">
-                  {/* <span className="achievement-icon">🏅</span>
-                  <span>Xilinx FPGA Design Certification</span> */}
-                </div>
-                <div className="">
-                  {/* <span className="achievement-icon">🏆</span>
-                  <span>Dean's List - 3 Semesters</span> */}
-                </div>
-                <div className="">
-                  {/* <span className="achievement-icon">🎯</span>
-                  <span>IEEE Student Member</span> */}
-                </div>
-                <div className="">
-                  {/* <span className="achievement-icon">💡</span>
-                  <span>Hackathon Winner - IoT Category</span> */}
+              {/* Skills Section */}
+              <div className="resume-collapsible">
+                <button
+                  className="collapsible-header"
+                  onClick={() => toggleSection('skills')}
+                >
+                  <span>🛠️ Technical Skills</span>
+                  <span className="toggle-icon">{expandedSections.skills ? '−' : '+'}</span>
+                </button>
+                <div className={`collapsible-content ${expandedSections.skills ? 'expanded' : ''}`}>
+                  <div className="skills-container">
+                    {skills.map((skill, index) => (
+                      <div key={index} className="skill-item">
+                        <div className="skill-header">
+                          <span className="skill-name">{skill.name}</span>
+                          <span className="skill-percentage">{skill.level}%</span>
+                        </div>
+                        <div className="skill-bar">
+                          <div
+                            className="skill-progress"
+                            style={{
+                              width: `${skill.level}%`,
+                              backgroundColor: skill.color
+                            }}
+                          ></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -350,42 +422,45 @@ function App() {
             <div className="projects-grid">
               <div className="project-card">
                 <div className="project-header">
-                  <h3>🧠 Neural Network Accelerator</h3>
+                  <h3>🧠 AI First Course Assistant LLM</h3>
                   <span className="project-status">Research</span>
                 </div>
-                <p>FPGA-based CNN accelerator for real-time image classification. Achieved 10x speedup compared to CPU implementation with 60% power reduction.</p>
+                <p>GPT-2 model trained on the Georgia Tech AI First Course to answer questions about the course material. Used different metrics such as tokenization strategies, learning rate, and # of layers and heads to evaluate the model's performance and used the model to answer questions about the course material.</p>
                 <div className="project-tech">
-                  <span className="tech-badge">Verilog</span>
-                  <span className="tech-badge">FPGA</span>
+                  <span className="tech-badge">Thesis Writing</span>
+                  <span className="tech-badge">Poster Presentation</span>
                   <span className="tech-badge">Python</span>
                   <span className="tech-badge">TensorFlow</span>
                 </div>
                 <div className="project-links">
-                  <a href="#" className="project-link">
-                    📊 Demo Video
+                  <a href="/Report_-_Romil_Patel.pdf" className="project-link" target="_blank" rel="noopener noreferrer">
+                    📝 Project Paper
                   </a>
-                  <a href="#" className="project-link">
+                  <a href="https://github.gatech.edu/rpatel778/AIFirst_Code" className="project-link" target="_blank" rel="noopener noreferrer">
                     📁 GitHub
+                  </a>
+                  <a href="/Poster_Template_2.pdf" className="project-link" target="_blank" rel="noopener noreferrer">
+                    🎤 Presentation
                   </a>
                 </div>
               </div>
               <div className="project-card">
                 <div className="project-header">
-                  <h3>🤖 Smart Home IoT System</h3>
+                  <h3>🤖 Snake Game on MBed Microcontroller</h3>
                   <span className="project-status">Complete</span>
                 </div>
-                <p>Embedded system with AI-powered voice recognition and automated home control. Features real-time sensor monitoring and cloud integration.</p>
+                <p>Embedded system that leveraged a MBed microcontroller to implement a snake game with a custom game controller displayed on a uLED screen.</p>
                 <div className="project-tech">
-                  <span className="tech-badge">Arduino</span>
-                  <span className="tech-badge">Raspberry Pi</span>
-                  <span className="tech-badge">Python</span>
-                  <span className="tech-badge">TensorFlow Lite</span>
+                  <span className="tech-badge">MBed</span>
+                  <span className="tech-badge">Circuits/Breadboards</span>
+                  <span className="tech-badge">C/C++</span>
+                  <span className="tech-badge">Embedded Systems</span>
                 </div>
                 <div className="project-links">
-                  <a href="#" className="project-link">
+                  <a href="IMG_0049.mov" className="project-link" target="_blank" rel="noopener noreferrer">
                     🏠 Live Demo
                   </a>
-                  <a href="#" className="project-link">
+                  <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
                     📁 GitHub
                   </a>
                 </div>
@@ -393,20 +468,20 @@ function App() {
               <div className="project-card">
                 <div className="project-header">
                   <h3>⚡ RISC-V Processor Design</h3>
-                  <span className="project-status">Academic</span>
+                  <span className="project-status">Complete</span>
                 </div>
-                <p>Custom RISC-V processor implementation with pipelined architecture. Includes cache memory, branch prediction, and performance optimization.</p>
+                <p>Designed a single cycle and multi-cycle RISC-V processor using SystemVerilog and ModelSim that supports the RV32I instruction set along with pipeline flushing, stall control, and data forwarding.</p>
                 <div className="project-tech">
                   <span className="tech-badge">SystemVerilog</span>
-                  <span className="tech-badge">ModelSim</span>
+                  <span className="tech-badge">ModelSim</span> 
                   <span className="tech-badge">Assembly</span>
                   <span className="tech-badge">C</span>
                 </div>
                 <div className="project-links">
-                  <a href="#" className="project-link">
-                    🔧 Simulation
+                  <a href="/Screenshot 2025-08-21 105825.png" className="project-link" target="_blank" rel="noopener noreferrer">
+                    🔧 Overview of Processor
                   </a>
-                  <a href="#" className="project-link">
+                  <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
                     📁 GitHub
                   </a>
                 </div>
@@ -424,10 +499,10 @@ function App() {
                   <span className="tech-badge">CUDA</span>
                 </div>
                 <div className="project-links">
-                  <a href="#" className="project-link">
+                  <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
                     👁️ Demo
                   </a>
-                  <a href="#" className="project-link">
+                  <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
                     📁 GitHub
                   </a>
                 </div>
@@ -445,10 +520,10 @@ function App() {
                   <span className="tech-badge">DSP</span>
                 </div>
                 <div className="project-links">
-                  <a href="#" className="project-link">
+                  <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
                     🎵 Audio Demo
                   </a>
-                  <a href="#" className="project-link">
+                  <a href="#" className="project-link" target="_blank" rel="noopener noreferrer">
                     📁 GitHub
                   </a>
                 </div>

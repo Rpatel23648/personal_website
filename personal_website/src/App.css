@@ -635,6 +635,123 @@ p {
 }
 
 /* Resume Page */
+.resume-pdf-section {
+  margin-bottom: 3rem;
+}
+
+.pdf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pdf-header h3 {
+  margin: 0;
+  color: #b3a369;
+}
+
+.pdf-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.download-button,
+.view-button {
+  background: #b3a369;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.download-button:hover,
+.view-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(179, 163, 105, 0.4);
+  background: #a08f5a;
+}
+
+.pdf-viewer {
+  background: #f8f9fa;
+  border: 2px solid #b3a369;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 8px 32px rgba(179, 163, 105, 0.15);
+}
+
+.resume-sections {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.resume-sections h3 {
+  color: #b3a369;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.resume-collapsible {
+  margin-bottom: 1rem;
+  border: 2px solid #b3a369;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(179, 163, 105, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.resume-collapsible:hover {
+  box-shadow: 0 6px 25px rgba(179, 163, 105, 0.2);
+}
+
+.collapsible-header {
+  width: 100%;
+  background: #b3a369;
+  color: white;
+  border: none;
+  padding: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.collapsible-header:hover {
+  background: #a08f5a;
+}
+
+.toggle-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.collapsible-content.expanded {
+  max-height: 2000px;
+  padding: 1.5rem;
+}
+
 .resume-section {
   max-width: 900px;
   margin: 0 auto;
@@ -948,6 +1065,19 @@ p {
   .contact-actions {
     flex-direction: column;
     align-items: center;
+  }
+
+  .pdf-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pdf-actions {
+    justify-content: center;
+  }
+
+  .pdf-viewer iframe {
+    height: 400px;
   }
 }
 
